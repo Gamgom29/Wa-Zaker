@@ -1,40 +1,56 @@
-<section class="w-3/4 mx-auto azkar-sec max-h-[70vh] mt-14">
-    <div class="azkar-container flex gap-5">
-        <div class="zikr text-start ">
+<section class="w-3/4 mx-auto azkar-sec min-h-[70vh] mt-14 bg-white rounded-md p-3">
+    <div class="azkar-container flex gap-5 items-center justify-center p-4 ">
+        <div (click)="changeAzkar(0)" class="zikr text-start cursor-pointer">
             <div>
                 <p>أذكار الصباح</p>
-                <p>27ذكر</p>
+                <p> 27 ذكر </p>
             </div>
             <div>
                 <img class="w-12 zikr-img" src="../../../assets/imgs/sun.png" alt="">
             </div>
         </div>
-        <div class="zikr text-start">
+        <div (click)="changeAzkar(1)" class="zikr text-start cursor-pointer">
             <div>
-                <p>أذكار الصباح</p>
-                <p>27ذكر</p>
+                <p>أذكار المساء</p>
+                <p> 27 ذكر </p>
             </div>
             <div>
-                <img class="w-12 zikr-img" src="../../../assets/imgs/sun.png" alt="">
-            </div>
-        </div>
-        <div class="zikr text-start">
-            <div>
-                <p>أذكار الصباح</p>
-                <p>27ذكر</p>
-            </div>
-            <div>
-                <img class="w-12 zikr-img" src="../../../assets/imgs/sun.png" alt="">
+                <img class="w-12 zikr-img" src="../../../assets/imgs/moon.png" alt="">
             </div>
         </div>
-        <div class="zikr text-start">
+        <div (click)="changeAzkar(2)" class="zikr text-start cursor-pointer">
             <div>
-                <p>أذكار الصباح</p>
-                <p>27ذكر</p>
+                <p>أذكار الصلاه</p>
+                <p> 13 ذكر </p>
             </div>
             <div>
-                <img class="w-12 zikr-img" src="../../../assets/imgs/sun.png" alt="">
+                <img class="w-12 zikr-img" src="../../../assets/imgs/pray.png" alt="">
             </div>
+        </div>
+        <div (click)="changeAzkar(3)" class="zikr text-start cursor-pointer">
+            <div>
+                <p>أذكار المذاكره</p>
+                <p> 3 أذكار </p>
+            </div>
+            <div>
+                <img class="w-12 zikr-img" src="../../../assets/imgs/studying.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="w-full h-px bg-gray-600">
+    </div>
+    <div>
+        <div class="mt-4">
+            <h1 class="text-center text-3xl text-lime-500 font-semibold"> {{curAzkar?.name}}</h1>
+            <p class="text-center text-xl mt-2 font-bold"> {{curAzkar?.data?.length}} / {{azkarCount+1}} </p>
+        </div>
+        <div class="displayed-zikr mt-2">
+            <p class="zikr-text">{{curZikr?.text}}</p>
+            <p class="text-center text-gray-500  text-2xl font-semibold">{{curZikr?.disc}}</p>
+        </div>
+        <div class="w-full flex justify-between px-3">
+            <span (click)="getZikr(azkarCount-1)" class="cursor-pointer flex justify-center items-center bg-lime-500 h-6 w-7"><i class="fas fa-arrow-right text-white  text-center"></i></span>
+            <span (click)="getZikr(azkarCount+1)" class="cursor-pointer flex justify-center items-center bg-lime-500 h-6 w-7"><i class="fas fa-arrow-left text-white  text-center"></i></span>
         </div>
     </div>
 </section>

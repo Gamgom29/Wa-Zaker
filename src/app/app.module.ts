@@ -9,7 +9,8 @@ import { AzanComponent } from './components/azan/azan.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
-
+import { BrowserAnimationsModule }from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,10 @@ import { SearchPipe } from './search.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    CarouselModule ,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
