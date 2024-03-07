@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
+
+$gray-1 : #f9f9f9;
+$gray-2 : #f1f1f1;
+$gray-3 : #dcdcdc;
+$gray-4 : #9e9ea7;
+$white:#fff;
+$dark-green:#02af8f;
+$light-green:#76c853;
+$green: #66b943;
+
+body {
+    background-color: $gray-2;
+    font-family: "Cairo", sans-serif;
+}
+

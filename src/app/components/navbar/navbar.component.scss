@@ -1,0 +1,29 @@
+@import '../../../imports';
+nav {
+    .links {
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: #f9f9f9;
+            color: #66b943;
+            border-radius: 5px;
+            font-weight: 700;
+            padding: 7px 15px;
+            width: 170px;
+            
+        }
+        a.active {
+            background-image: linear-gradient( 
+            90deg ,
+            $dark-green, 
+            $light-green
+            );
+            color: $white;
+            img {
+                filter: brightness(100);
+            }
+        }
+    }
+}
