@@ -13,7 +13,7 @@ $green: #66b943;
     line-height: 40px;
     font-size: 20px;
     font-weight: 600;
-    width: 250px;
+    width: 25%;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -36,10 +36,40 @@ $green: #66b943;
     text-align: center;
     font-family: "Amiri", serif;
     font-size: 1.7rem;
+    height: 160px;
     margin: 10px 5px;
-    height: 165px;
     line-height: 1.7;
     &:first-child {
         margin-right: 0;
     }
+}
+
+
+@media (max-width: 991.98px) { 
+    .zikr-text {
+        font-size: 16px;
+        height: 130px;
+        line-height: 1.4;
+    }
+    section {
+        width: 100%;
+    }
+    .heading {
+        h1 {
+            font-size: 20px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    .zikr-count {
+        font-size: 16px;
+        height: auto;
+        line-height: 1.4;
+    }
+    .zikr {
+        font-size: 14px;
+        padding: 5px 20px;
+    }
+    
 }

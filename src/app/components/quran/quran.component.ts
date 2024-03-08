@@ -1,6 +1,5 @@
 import { QuranService } from './../../quran.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { Surah } from 'src/app/shared/interfaces/surah';
 
 @Component({

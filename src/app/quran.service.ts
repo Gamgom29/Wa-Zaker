@@ -13,6 +13,6 @@ export class QuranService {
     return this._HttpClient.get(`https://api.alquran.cloud/v1/surah`);
   }
   getSpecSurah(num:number):Observable<any> {
-    return this._HttpClient.get(`https://api.alquran.cloud/v1/surah/${num}`);
+    return this._HttpClient.get(`https://api.alquran.cloud/v1/surah/${num}/quran-simple`);
   }
 }

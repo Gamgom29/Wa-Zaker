@@ -8,6 +8,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class AzkarComponent implements OnInit {
     constructor(private _AzkarService:AzkarService){}
+    
     azkar:any[] = [];
     curAzkar:any;
     azkarCount = 0 ;
@@ -37,6 +38,7 @@ export class AzkarComponent implements OnInit {
     }
     changeAzkar(num:number){
       this.curAzkar = this.azkar[num];
-      this.curZikr = this.curAzkar.data[0]; 
+      this.curZikr = this.curAzkar.data[0];
+      this.azkarCount = 0 ;
     }
 }

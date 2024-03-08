@@ -28,7 +28,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     FormsModule,
     BrowserAnimationsModule,
     CarouselModule ,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
