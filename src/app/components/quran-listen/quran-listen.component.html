@@ -1,0 +1,38 @@
+
+<section class="quran-sec md:w-5/6 mx-auto md:flex gap-6 md:justify-between  md:flex-row sm:flex-col max-h-[80vh] mt-10 sm:w-full">
+    <div class="rounded-xl md:w-1/4 sm:w-1/2 bg-white  p-4 search ">
+        <h1 class="main-title mb-4">السْوَر</h1>
+        <div class="flex gap-3">
+            <input #srchInput  class="block w-3/4 search-inp rounded-md " list="surahSearch" placeholder="البحث عن سوره">
+            <datalist class="search-list"  id="surahSearch">
+                <option  *ngFor="let s of SearchSurahs" value="{{s.number}}" >{{s.number + 1}} - {{s.name}}</option>
+            </datalist>
+            <button (click)="getSpecSurah(srchInput.value)" class="search-btn rounded-md">اختيار</button>
+        </div>
+        <div  class="surah-box md:flex md:h-4/5  flex-col items-center gap-2 mt-3 p-3 overflow-y-scroll">
+            <div (click)="getSpecSurah(surah.number)"  *ngFor="let surah of surahs" class="surah w-full rounded-md md:block p-2 cursor-pointer">
+                <p class="text-end text-white">{{surah.name}} </p>
+                <p class="text-start text-white">  {{surah.revelationType =='Meccan' ? ' مكيه' : ' مدنيه'  }} {{surah.numberOfAyahs}} / {{surah.numberOfAyahs>10 ? 'آيه':'آيات'}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="surah-view rounded-xl h-1/2 self-center  w-3/4 bg-white  overflow-hidden p-12">
+        <div class="flex justify-between p-5 surah-header">
+            <span (click)="getSpecSurah(curSurah.number + 1 )" class="cursor-pointer flex justify-center items-center bg-lime-500  h-6 w-7"><i class="fas fa-arrow-right text-white  text-center"></i></span>
+            <div class="text-center mb-4 ">
+                <p class="text-lime-500 text-2xl font-bold ">{{curSurah.name}}</p>
+                <p class="text-lime-500 text-center">{{curSurah.englishName}}</p>
+                </div>
+            <span (click)="getSpecSurah(curSurah.number -1 )" class="flex justify-center items-center bg-lime-500 h-6 w-7 cursor-pointer"><i class="fas fa-arrow-left text-white  text-center"></i></span>
+    </div>
+    <div class="flex justify-center items-center h-1/2">
+        <div class="text-center">
+                <div >
+                    <div class="audio-player">
+                        <audio [src]="audioSrc" #audio  controls class="mx-auto"></audio>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </div>
+</section>

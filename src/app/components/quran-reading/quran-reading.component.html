@@ -1,0 +1,36 @@
+
+<section class="quran-sec md:w-5/6 mx-auto md:flex gap-6 md:justify-between  md:flex-row sm:flex-col max-h-[80vh] mt-10 sm:w-full">
+    <div class="rounded-xl md:w-1/4 sm:w-1/2 bg-white  p-4 search ">
+        <h1 class="main-title mb-4">السْوَر</h1>
+        <div class="flex gap-3">
+            <input #srchInput  class="block w-3/4 search-inp rounded-md " list="surahSearch" placeholder="البحث عن سوره">
+            <datalist class="search-list"  id="surahSearch">
+                <option  *ngFor="let s of SearchSurahs" value="{{s.number}}" >{{s.number}} - {{s.name}}</option>
+            </datalist>
+            <button (click)="getSpecSurah(srchInput.value)" class="search-btn rounded-md">اختيار</button>
+        </div>
+        <div  class="surah-box md:flex h-4/5  flex-col items-center gap-2 mt-3 p-3 overflow-y-scroll">
+            <div (click)="getSpecSurah(surah.number)"  *ngFor="let surah of surahs" class="surah w-full rounded-md md:block p-2 cursor-pointer">
+                <p class="text-end text-white">{{surah.name}} </p>
+                <p class="text-start text-white">  {{surah.revelationType =='Meccan' ? ' مكيه' : ' مدنيه'  }} {{surah.numberOfAyahs}} / {{surah.numberOfAyahs>10 ? 'آيه':'آيات'}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="surah-view rounded-xl w-3/4 bg-white  overflow-hidden p-2">
+        <div class="flex justify-between p-5 surah-header">
+                <span (click)="getSpecSurah(displayedSurah.number -1)" class="cursor-pointer flex justify-center items-center bg-lime-500 h-6 w-7"><i class="fas fa-arrow-right text-white  text-center"></i></span>
+                <div>
+                <p class="text-lime-500 text-2xl font-bold ">{{displayedSurah.name}}</p>
+                <p class="text-lime-500 text-center">{{displayedSurah.englishName}}</p>
+                </div>
+            <span (click)="getSpecSurah(displayedSurah.number +1)" class="flex justify-center items-center bg-lime-500 h-6 w-7 cursor-pointer"><i class="fas fa-arrow-left text-white  text-center"></i></span>
+        </div>
+        <div class="display-surah overflow-auto h-5/6  ">
+            <span class="ayah " *ngFor="let ayah of displayedSurah.ayahs">{{ayah.text}} <span class="ayah-num">({{ayah.numberInSurah}})</span></span>
+            <div class="mx-auto flex items-center justify-center mt-3">
+            <img class="w-1/4" src="./assets/imgs/tasdeeq.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!--  -->
+</section>

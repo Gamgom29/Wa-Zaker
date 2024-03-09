@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
 import { BrowserAnimationsModule }from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { QuranReadingComponent } from './components/quran-reading/quran-reading.component';
+import { QuranListenComponent } from './components/quran-listen/quran-listen.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +21,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     AzanComponent,
     NavbarComponent,
     SearchPipe,
+    QuranReadingComponent,
+    QuranListenComponent,
     
   ],
   imports: [

@@ -7,125 +7,48 @@ $dark-green:#02af8f;
 $light-green:#76c853;
 $green: #66b943;
 
-.quran-sec {
-    
-    .main-title {
-        font-size: 30px;
-        color:$green ;
-        font-weight: 700;
+.card {
+    background-color: $white;
+    padding: 40px 80px;
+    border-radius: 10px;
+    transition: all 1s ;
+    &:hover {
+        background-color: #02af8f;
+        p {
+            color: $white;
+        }
+        img {
+            filter: brightness(100);
+        }
+        .bglinear {
+            background: linear-gradient($white ,$white);
+            -webkit-text-fill-color: transparent; 
+            -webkit-background-clip: text;
+        }
     }
-    .search-inp  {
-        padding:5px 20px;
-        background-color: $gray-2;
+    img {
         transition: all 1s;
-        font-family: "Amiri", serif;
-        &:focus {
-            outline: none;
-            border-color: rgba(53, 197, 106, 0.4);
-            background-color: var(--white);
-            box-shadow: 0 0 0 4px rgba(69, 220, 94, 0.1);
-        }
-        &::placeholder {
-            color: $gray-4;
-        }
-    }
-    .search-btn {
-        padding:5px 20px;
-        color: $gray-4;
-        background-color: $gray-2;
-        transition: all 1s ;
-        &:hover {
-            background-color: $gray-4;
-            color: $gray-2;
-        }
-    }
-    .search {
-        datalist {
-            background-color: $white;
-            color: #000;
-            option {
-                background-color: #fff;
-                color: #000;
-            }
-        }
-        
-        overflow-y: hidden;
-        &::-webkit-scrollbar {
-            display: none;
-        }
-        .surah {
-            background-image: linear-gradient(
-                90deg , 
-                $dark-green,
-                $light-green
-            );
-            
-        }
-        .surah-box {
-            &::-webkit-scrollbar {
-            width: 10px;
-            }
-            &::-webkit-scrollbar-track {
-                background: $gray-3;
-            }
-            &::-webkit-scrollbar-thumb {
-                background-color: $green;
-                max-height: 5px !important;
-            }
-        }
-    }
-    .display-surah {
-        padding: 0px 10px;
-        padding-top: 30px;
-        text-align: center;
-        &::-webkit-scrollbar {
-            padding-left: 20px;
-            width: 10px;
-            }
-            &::-webkit-scrollbar-track {
-                background: $gray-1;
-            }
-            &::-webkit-scrollbar-thumb {
-                background-color: $green;
-                max-height: 5px !important;
-            }
-    }
-    .ayah-num {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: $dark-green;
-    }
-    .ayah {
-        // font-family: "Amiri", serif;
-        font-family: "Noto Kufi Arabic", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-size: 1.6rem;
-        margin: 10px 5px;
-        line-height: 2;
-        &:first-child {
-            margin-right: 0;
-        }
-    }
-    .surah-header {
-        padding-bottom: 10px;
     }
 }
+.bglinear {
+    transition: all 1s !important;
+    background: linear-gradient(
+        180deg,
+        $light-green,
+        $dark-green
+    );
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+}
 
-@media (max-width: 991.98px) { 
-    .surah-box {
-        display: none;
+@media (max-width: 575.98px) {
+    .card {
+        padding: 20px 40px;
     }
-    .surah-view {
-        width: 100%;
-        margin-top: 10px;
-        height: 50%;
-        overflow: auto;
+    .card-img {
+        width: 96px  !important;
     }
-    .display-surah {
-        height: 350px;
-    }
-    .quran-sec {
-        padding-inline: 20px;
+    .bglinear {
+        font-size: 96px;
     }
 }
