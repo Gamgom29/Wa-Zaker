@@ -47,6 +47,20 @@ export class QuranReadingComponent implements OnInit {
   SearchSurahs:any[]=[];
   surahs:Surah[] = [];
   displayedSurah:any = {};
+  getSurahFromSearch(name:string){
+    let indx = this.SearchSurahs.findIndex(item=> item.name == name);
+    if(indx >= 1 && indx<= 114 ){
+      this._QuranService.getSpecSurah(indx+1).subscribe({
+        next:res=>{
+          this.displayedSurah = res.data;
+        },
+        error:err=>{
+          console.log(err);
+        }
+      })
+    }
+    console.log(indx);
+  }
   getSpecSurah(number:any){
     console.log(number);
     

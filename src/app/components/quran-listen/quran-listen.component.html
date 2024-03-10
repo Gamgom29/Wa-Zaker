@@ -5,9 +5,9 @@
         <div class="flex gap-3">
             <input #srchInput  class="block w-3/4 search-inp rounded-md " list="surahSearch" placeholder="البحث عن سوره">
             <datalist class="search-list"  id="surahSearch">
-                <option  *ngFor="let s of SearchSurahs" value="{{s.number}}" >{{s.number + 1}} - {{s.name}}</option>
+                <option  *ngFor="let s of SearchSurahs" value="{{s.name}}" >{{s.number+1}}</option>
             </datalist>
-            <button (click)="getSpecSurah(srchInput.value)" class="search-btn rounded-md">اختيار</button>
+            <button (click)=" getSurahFromSearch(srchInput.value)" class="search-btn rounded-md">اختيار</button>
         </div>
         <div  class="surah-box md:flex md:h-4/5  flex-col items-center gap-2 mt-3 p-3 overflow-y-scroll">
             <div (click)="getSpecSurah(surah.number)"  *ngFor="let surah of surahs" class="surah w-full rounded-md md:block p-2 cursor-pointer">

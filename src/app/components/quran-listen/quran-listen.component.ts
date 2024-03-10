@@ -50,6 +50,14 @@ export class QuranListenComponent {
   SearchSurahs:any[]=[];
   surahs:Surah[] = [];
   curSurah:Surah = {} as Surah;
+  getSurahFromSearch(name:string){
+    let indx = this.SearchSurahs.findIndex(item=> item.name == name);
+    if(indx >= 0 && indx < 114 ){
+      this.curSurah = this.surahs[indx];
+      this.audioSrc = `https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${indx+1}.mp3`;
+    }
+    console.log(indx);
+  }
   getSpecSurah(number:any){
     console.log(this.curSurah);
     if(number >= 0 && number< 114 ){
